@@ -39,10 +39,7 @@ fun PortadaScreen(navController: NavController){
     var showLoadingScreen by rememberSaveable { mutableStateOf(false) }
 
     // Cambia el estado después de 3 segundos
-    LaunchedEffect(Unit) {
-        kotlinx.coroutines.delay(5000)
-        navController.navigate(route = AppScreen.MenuScreen.route)
-    }
+
 
     Column (verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,6 +75,11 @@ fun PortadaScreen(navController: NavController){
         Spacer(Modifier.weight(0.5f))
 
         if (showLoadingScreen){
+            LaunchedEffect(Unit) {
+                kotlinx.coroutines.delay(5000)
+                navController.navigate(route = AppScreen.MenuScreen.route)
+            }
+
             LinearProgressIndicator(
                 modifier = Modifier.padding(top = 30.dp),
                 color = Color.Red,
