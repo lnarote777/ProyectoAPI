@@ -1,5 +1,6 @@
 package com.example.proyectoapi.componentes
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -22,14 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.proyectoapi.R
+import com.example.proyectoapi.navigation.AppScreen
 
 
 @Composable
-fun HeaderMenu(){
+fun HeaderMenu(navController: NavController){
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -46,20 +49,20 @@ fun HeaderMenu(){
         ) {
             Icon(
                 imageVector = Icons.Default.DateRange,
-                contentDescription = "Menú",
+                contentDescription = "Calendario",
                 tint = Color.White,
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(35.dp)
                     .clickable {  }
             )
 
             Spacer(Modifier.width(30.dp))
 
             Icon(
-                imageVector = Icons.Default.Settings,
-                contentDescription = "Menú",
+                painter = painterResource(R.drawable.api_icon),
+                contentDescription = "API",
                 tint = Color.White,
-                modifier = Modifier.size(30.dp)
-                    .clickable {  }
+                modifier = Modifier.size(40.dp)
+                    .clickable { navController.navigate(route = AppScreen.ApiScreen.route) }
             )
         }
 

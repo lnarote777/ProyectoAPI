@@ -13,12 +13,12 @@ import com.example.proyectoapi.componentes.ListaGastos
 
 
 @Composable
-fun MenuScreen(){
+fun MenuScreen(navController: NavController){
     Column(Modifier
         .fillMaxSize()
        .background(color = colorResource(R.color.portada))
     ) {
-        HeaderMenu()
+        HeaderMenu(navController)
         ListaGastos()
     }
 }

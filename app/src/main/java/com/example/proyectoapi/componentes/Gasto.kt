@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -28,9 +29,10 @@ fun Gasto(name: String, precio: String, fecha: String){
     ) {
         Text(
             text = fecha,
-            fontSize = 30.sp,
+            fontSize = 20.sp,
             textAlign = TextAlign.End,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            color = Color.DarkGray
         )
         Spacer(Modifier.height(8.dp))
         Row(modifier = Modifier.fillMaxWidth(),
